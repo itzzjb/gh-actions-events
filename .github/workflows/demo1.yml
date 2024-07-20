@@ -1,6 +1,15 @@
 name: Events Demo
 run-name: Events Demo
-on: push
+# We only need to only run this workflow only when we opened or close a pull request + We set workflow_dispatch, so we can run it manually
+# So, we need to use action types: opened, edited specified in the on key
+on:
+  pull_request:
+    # We can list the types as -> types: [opened, edited] or as below
+    types:
+      - opened
+      - closed
+  # Notice that even there are no types, we write as workflow_dispatch: (with semi-colon)
+  workflow_dispatch:
 jobs:
   deploy:
     runs-on: ubuntu-latest
