@@ -20,11 +20,8 @@ on:
       - feat/** # This will run the workflow when the push event occurs on branches that start with feat/
       # The difference of * and ** is that * matches any character except / and ** matches any character including /
     # branches-ignore:
-    #   - "test" # This will not run the workflow when the push event occurs on the test branch
-    #   - "demo" # This will not run the workflow when the push event occurs on the demo branch
-
+    #   - "demo" # This will not run the workflow when a push event occurs on the demo branch
     paths:
-      - "src/**" # This will run the workflow only when the push event occurs on the src directory
       - ".github/**" # This will run the workflow only when the push event occurs on the .github directory
     # paths-ignore:
     #   - "public/**" # This will not run the workflow when a push event occurs on the public directory
