@@ -19,13 +19,14 @@ on:
       - dev-* # This will run the workflow when the push event occurs on branches that start with dev-
       - feat/** # This will run the workflow when the push event occurs on branches that start with feat/
       # The difference of * and ** is that * matches any character except / and ** matches any character including /
-    branches-ignore:
-      - "test" # This will ignore the test branch
-      - "demo" # This will ignore the demo branch
+    # branches-ignore:
+    #   - "test" # This will ignore the test branch
+    #   - "demo" # This will ignore the demo branch
+
     paths:
       - "src/**" # This will only run the workflow when the push event occurs on the src directory
-    paths-ignore:
-      - "test/**" # This will not run the workflow when the push event occurs on the test directory
+    # paths-ignore:
+    #   - "public/**" # This will not run the workflow when the push event occurs on the public directory
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -42,3 +43,5 @@ jobs:
         run: npm run build
       - name: Deploy project
         run: echo "Deploying..."
+# You can only have one of branches or branches-ignore, not both
+# You can only have one of paths or paths-ignore, not both

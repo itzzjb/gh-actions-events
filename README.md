@@ -15,4 +15,5 @@ Event filters allows you to specify the conditions that must be met for the work
 For example, we can specify the branch name in the event filter to trigger the workflow only when the push is made to the main branch
 
 Activity Types -> https://docs.github.com/en/actions/reference/events-that-trigger-workflows
+
 Event Filters -> https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
