@@ -26,5 +26,5 @@ This is because anyone can fork the repository and make workflows run in a malic
 
 The owner of the repository must manually approve the workflow run. After the first approval the following pull requests will automatically run the workflow without the permission of the owner.
 
-> !NOTE
+> [!NOTE]
 > Collaborates don't need to wait for the approval like forked users, they are considered as trusted users by the owner. So, the workflows will run for them automatically.
