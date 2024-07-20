@@ -1,5 +1,10 @@
-name: Events Demo 1
-on: ...
+name: Events Demo
+run-name: Events Demo
+# For example, we may only need to trigger the workflow when you push to the main branch
+# We would need to configure the behavior of event triggers to control when the workflow runs
+# So for this, we need to use event related features live events filters and activity types
+# Events -> https://docs.github.com/en/actions/reference/events-that-trigger-workflows
+on: push
 jobs:
   deploy:
     runs-on: ubuntu-latest
