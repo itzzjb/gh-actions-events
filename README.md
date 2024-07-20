@@ -28,3 +28,16 @@ The owner of the repository must manually approve the workflow run. After the fi
 
 > [!NOTE]
 > Collaborates don't need to wait for the approval like forked users, they are considered as trusted users by the owner. So, the workflows will run for them automatically.
+
+## Cancel Workflows
+
+- A workflow will be canceled automatically if a job failed. (When a single step of a job fails)
+- Workflows can also be cancelled manually
+
+## Skip Workflows
+
+- By default all matching events starts a workflow
+- But when we are using the push or pull request events, we are able to skip a workflow run that normally will be triggered using commit message.
+  - You need to add a suffix to the the commit message (if a pull request, the last commit's commit message) as `[skip ci]`, `[ci skip]`, `[no ci]`, `[skip actions]` or `[actions skip]`.
+
+Skipping Workflows -> https://docs.github.com/en/actions/managing-workflow-runs/skipping-workflow-runs
