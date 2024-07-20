@@ -8,8 +8,24 @@ on:
     types:
       - opened
       - closed
+    branches:
+      - master # This will run the workflow when the pull request is opened or closed on the master branch
   # Notice that even there are no types, we write as workflow_dispatch: (with semi-colon)
   workflow_dispatch:
+  push:
+    # By specifying branches, we can limit the workflow to run only when the push event occurs on following branches
+    branches:
+      - master
+      - dev-* # This will run the workflow when the push event occurs on branches that start with dev-
+      - feat/** # This will run the workflow when the push event occurs on branches that start with feat/
+      # The difference of * and ** is that * matches any character except / and ** matches any character including /
+    branches-ignore:
+      - "test" # This will ignore the test branch
+      - "demo" # This will ignore the demo branch
+    paths:
+      - "src/**" # This will only run the workflow when the push event occurs on the src directory
+    paths-ignore:
+      - "test/**" # This will not run the workflow when the push event occurs on the test directory
 jobs:
   deploy:
     runs-on: ubuntu-latest
