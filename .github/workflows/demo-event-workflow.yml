@@ -9,7 +9,7 @@ on:
       - opened
       - closed
     branches:
-      - master # This will run the workflow when a pull request is opened or closed on the master branch
+      - master # This will run the workflow when a pull request is only targeted to the master branch
   # Notice that even there are no types, we write as workflow_dispatch: (with semi-colon)
   workflow_dispatch:
   push:
@@ -18,6 +18,7 @@ on:
       - master # This will run the workflow when a push event occurs on the master branch
       - dev-* # This will run the workflow when a push event occurs on branches that start with dev-
       - feat/** # This will run the workflow when a push event occurs on branches that start with feat/
+      # Pushes to other types of branches will not trigger the workflow
       # The difference of * and ** is that * matches any character except / and ** matches any character including /
     # branches-ignore:
     #   - "demo" # This will not run the workflow when a push event occurs on the demo branch
