@@ -10,7 +10,7 @@ Activity types allows you to specify which exact version or variation of event s
 
 For example, pull_request event has multiple variations like opened, edited, closed, etc.
 
-Event filters allows you to specify the conditions that must be met for the workflow to run
+Event filters allows you to specify the conditions that must be met for the workflow to run (branches, paths, branches-ignore, paths-ignore)
 
 For example, we can specify the branch name in the event filter to trigger the workflow only when the push is made to the main branch
 
